@@ -93,7 +93,7 @@ public class MainFragment extends Fragment {
         tvReceivedSms = view.findViewById(R.id.tv_received_sms);
 
         tvPrivacyPolicy = view.findViewById(R.id.tv_privacy_policy);
-        tvTermsAndConditions = view.findViewById(R.id.tv_privacy_policy);
+        tvTermsAndConditions = view.findViewById(R.id.tv_terms_and_conditions);
 
         tvPrivacyPolicy.setOnClickListener(v -> {
 
