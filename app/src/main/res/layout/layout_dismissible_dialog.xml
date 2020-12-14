@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_background"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/imv_dismissible_dialog"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="3dp"
+        android:importantForAccessibility="no"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/tv_dismissible_dialog_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:textAlignment="center"
+        android:textSize="15sp"
+        android:gravity="center_horizontal"
+        android:layout_below="@id/imv_dismissible_dialog"
+        android:layout_centerHorizontal="true" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_dismissible_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:theme="@style/MaterialTheme"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tv_dismissible_dialog_message"/>
+
+</RelativeLayout>
