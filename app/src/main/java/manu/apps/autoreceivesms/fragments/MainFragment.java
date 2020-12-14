@@ -105,7 +105,7 @@ public class MainFragment extends Fragment {
             android.app.AlertDialog.Builder alert = new AlertDialog.Builder(requireActivity());
 
             WebView webView = new WebView(requireActivity());
-            webView.loadUrl("https://dash.dohyangu.ke/app/apis/privacyPolicy.html");
+            webView.loadUrl("https://autoreceivesms.flycricket.io/privacy.html");
             webView.setWebViewClient(new WebViewClient() {
 
                 @Override
@@ -145,7 +145,7 @@ public class MainFragment extends Fragment {
             android.app.AlertDialog.Builder alert = new AlertDialog.Builder(requireActivity());
 
             WebView webView = new WebView(requireActivity());
-            webView.loadUrl("https://dash.dohyangu.ke/app/apis/privacyPolicy.html");
+            webView.loadUrl("https://autoreceivesms.flycricket.io/terms.html");
             webView.setWebViewClient(new WebViewClient() {
 
                 @Override
