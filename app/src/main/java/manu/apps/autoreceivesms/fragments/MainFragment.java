@@ -225,6 +225,7 @@ public class MainFragment extends Fragment {
 
                 tvReceivedSms.setText(messageBody);
 
+                // Filter the sender
 //                if (sender.equalsIgnoreCase("DohYangu")) {
 //
 //
