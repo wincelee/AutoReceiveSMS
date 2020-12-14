@@ -66,7 +66,7 @@ public class MainFragment extends Fragment {
 
     BroadcastReceiver broadcastReceiver;
 
-    TextView tvPrivacy_Policy;
+    TextView tvPrivacyPolicy, tvTermsAndConditions;
 
     public static final int RECEIVE_SMS_REQUEST = 1;
 
@@ -92,7 +92,10 @@ public class MainFragment extends Fragment {
 
         tvReceivedSms = view.findViewById(R.id.tv_received_sms);
 
-        tvPrivacy_Policy.setOnClickListener(v -> {
+        tvPrivacyPolicy = view.findViewById(R.id.tv_privacy_policy);
+        tvTermsAndConditions = view.findViewById(R.id.tv_privacy_policy);
+
+        tvPrivacyPolicy.setOnClickListener(v -> {
 
             final ProgressDialog progressDialog = new ProgressDialog(requireActivity());
             progressDialog.setMessage("Loading.......");
@@ -132,6 +135,47 @@ public class MainFragment extends Fragment {
 
         });
 
+        tvTermsAndConditions.setOnClickListener(v -> {
+
+            final ProgressDialog progressDialog = new ProgressDialog(requireActivity());
+            progressDialog.setMessage("Loading.......");
+            progressDialog.show();
+            progressDialog.setCancelable(false);
+
+            android.app.AlertDialog.Builder alert = new AlertDialog.Builder(requireActivity());
+
+            WebView webView = new WebView(requireActivity());
+            webView.loadUrl("https://dash.dohyangu.ke/app/apis/privacyPolicy.html");
+            webView.setWebViewClient(new WebViewClient() {
+
+                @Override
+                public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                    super.onPageStarted(view, url, favicon);
+                    // Do something when the page starts
+                }
+
+                @Override
+                public void onPageFinished(WebView view, String url) {
+                    super.onPageFinished(view, url);
+                    progressDialog.dismiss();
+                }
+
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                    view.loadUrl(url);
+
+                    return true;
+                }
+            });
+
+
+            alert.setView(webView);
+            alert.setNegativeButton("Close", (dialog, id) -> dialog.dismiss());
+            alert.show();
+
+
+        });
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             {
@@ -165,7 +209,6 @@ public class MainFragment extends Fragment {
 
                     requestPermissionLauncher.launch(
                             Manifest.permission.RECEIVE_SMS);
-
 
                 }
             }
