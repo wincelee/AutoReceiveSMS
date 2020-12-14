@@ -127,14 +127,7 @@ public class MainFragment extends Fragment {
 
 
             alert.setView(webView);
-            alert.setNegativeButton("Close", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int id) {
-
-                    dialog.dismiss();
-
-                }
-            });
+            alert.setNegativeButton("Close", (dialog, id) -> dialog.dismiss());
             alert.show();
 
         });
